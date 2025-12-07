@@ -133,7 +133,7 @@ const Projects = () => {
                             <div className="flex items-center gap-4">
                                 <div className="tooltip relative">
                                     <a
-                                        href="/2d-portfolio"
+                                        href="/2d-game-portfolio"
                                         onClick={(e) => e.preventDefault()}
                                         className="inline-flex items-center gap-3 text-white font-sora font-extrabold"
                                     >
@@ -144,7 +144,7 @@ const Projects = () => {
                                     <span className="tooltip-text whitespace-nowrap">Not Live</span>
                                 </div>
                                 <a
-                                    href="https://github.com/saimeown/2d-portfolio"
+                                    href="https://github.com/saimeown/2d-game-portfolio"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-white hover:text-gray-300 transition-all duration-300 transform hover:scale-110"
