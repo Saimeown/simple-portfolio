@@ -100,7 +100,7 @@ const Projects = () => {
                         >
                             <div className="tooltip">
                                 <a
-                                    href="https://github.com/saimeown/2d-portfolio"
+                                    href="https://github.com/saimeown/2d-game-portfolio"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
