@@ -1,6 +1,7 @@
 ﻿import ToothTrackrVideo from '../assets/toothtrackr.mp4'
 import TometouVideo from '../assets/tometou.mp4'
 import KibblerVideo from '../assets/kibbler.mp4'
+import YeoboothGif from '../assets/yeobooth.gif'
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll';
 import { FiGithub } from 'react-icons/fi';
 import Portfolio2d from '../assets/2d-portfolio.mp4'
@@ -15,6 +16,8 @@ const Projects = () => {
     const project3TextReveal = useRevealOnScroll({ delay: 500 });
     const project4VideoReveal = useRevealOnScroll({ delay: 300 });
     const project4TextReveal = useRevealOnScroll({ delay: 500 });
+    const project5VideoReveal = useRevealOnScroll({ delay: 300 });
+    const project5TextReveal = useRevealOnScroll({ delay: 500 });
 
     return (
         <section className="bg-black relative w-full min-h-screen py-20" data-section="projects">
@@ -278,6 +281,50 @@ const Projects = () => {
                                 >
                                     <FiGithub className="w-8 h-8" />
                                 </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* 5. Yeobooth */}
+                    <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+                        <div
+                            ref={project5VideoReveal.ref}
+                            className={`w-full lg:w-1/2 reveal-fade-left ${project5VideoReveal.isRevealed ? 'revealed' : ''}`}
+                        >
+                            <img
+                                src={YeoboothGif}
+                                alt="Yeobooth preview"
+                                className="w-full h-64 sm:h-80 lg:h-96 xl:h-[500px] object-cover rounded-2xl"
+                            />
+                        </div>
+
+                        <div
+                            ref={project5TextReveal.ref}
+                            className={`w-full lg:w-1/2 text-center lg:text-left reveal-fade-right ${project5TextReveal.isRevealed ? 'revealed' : ''}`}
+                        >
+                            <h3 className="text-white font-sora font-extrabold text-2xl sm:text-3xl lg:text-4xl xl:text-5xl mb-4">
+                                Yeobooth
+                            </h3>
+                            <p className="text-white/80 font-sora font-medium text-lg sm:text-xl lg:text-2xl mb-6">
+                                Online Photobooth with AR Filters
+                            </p>
+                            <p className="text-white/70 text-sm sm:text-base lg:text-lg leading-relaxed mb-8">
+                                Yeobooth is a web-based photobooth that lets users take photos, choose frames and layouts, and apply AR filters for real-time enhancements and effects.
+                            </p>
+                            <div className="flex items-center gap-4">
+                                <div className="tooltip relative">
+                                    <a
+                                        href="https://yeobooth.vercel.app/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-3 text-white font-sora font-extrabold"
+                                    >
+                                        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                        </svg>
+                                    </a>
+                                    <span className="tooltip-text whitespace-nowrap">Live</span>
+                                </div>
                             </div>
                         </div>
                     </div>
