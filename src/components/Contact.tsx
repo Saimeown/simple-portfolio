@@ -191,12 +191,12 @@ const Contact = () => {
                             className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black mb-6 leading-tight reveal-fade-right ${titleReveal.isRevealed ? 'revealed' : ''}`}
                         >
                             <div className="flex items-center whitespace-nowrap sm:whitespace-normal">
-                                <span className="font-sora font-extrabold mr-2">Let’s</span>
+                                <span className="font-sora font-extrabold mr-2">Let us</span>
                                 <img src={Talk} alt="Talk" className="h-12 mb-1 mr-3 inline-block mx-2" />
-                                <span className="font-sora font-extrabold">for</span>
+                                <span className="font-sora font-extrabold">about</span>
                             </div>
                             <div className="whitespace-nowrap sm:whitespace-normal">
-                                <span className="font-sora font-extrabold">Something Special</span>
+                                <span className="font-sora font-extrabold">Your Next Interface</span>
                             </div>
                         </div>
 
@@ -205,7 +205,10 @@ const Contact = () => {
                             ref={descriptionReveal.ref}
                             className={`text-sm sm:text-base md:text-lg lg:text-xl text-black/70 mb-8 leading-relaxed reveal-fade-right ${descriptionReveal.isRevealed ? 'revealed' : ''}`}
                         >
-                            <p>I seek to push the limits of creativity to create high-engaging,<br></br> user-friendly, and memorable interactive experiences.</p>
+                            <p>
+                                Need a landing page, product dashboard, or a full UI refresh? I design interfaces that balance
+                                brand personality with practical usability and conversion performance.
+                            </p>
                         </div>
 
                         {/* Contact Details */}

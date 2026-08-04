@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FiUser, FiCode, FiFolder, FiMail } from 'react-icons/fi';
+import { FiUser, FiEye, FiMail } from 'react-icons/fi';
 
 const SideNav = () => {
   const [activeSection, setActiveSection] = useState('about');
@@ -41,7 +41,7 @@ const SideNav = () => {
       }
 
       // Active section detection
-      const sections = ['about', 'skills', 'projects', 'contact'];
+      const sections = ['about', 'projects', 'contact'];
       const scrollPosition = currentScrollY + 100;
       
       const sectionElements = sections.map(section => {
@@ -70,21 +70,9 @@ const SideNav = () => {
         top: document.documentElement.scrollHeight,
         behavior: 'smooth'
       });
-    } else if (sectionId === 'skills') {
-      // Scroll to carousel 1 and center it vertically
-      const element = document.getElementById('skills-carousel-1');
-      if (element) {
-        const elementRect = element.getBoundingClientRect();
-        const elementTop = elementRect.top + window.pageYOffset;
-        const elementCenter = elementTop - (window.innerHeight / 2) + (elementRect.height / 2);
-        window.scrollTo({
-          top: elementCenter,
-          behavior: 'smooth'
-        });
-      }
     } else if (sectionId === 'projects') {
-      // Scroll to ToothTrackr text and center it vertically
-      const element = document.getElementById('projects-toothtrackr');
+      // Scroll to first showcase card and center it vertically
+      const element = document.getElementById('showcase-kibbler');
       if (element) {
         const elementRect = element.getBoundingClientRect();
         const elementTop = elementRect.top + window.pageYOffset;
@@ -108,8 +96,7 @@ const SideNav = () => {
 
   const navItems = [
     { id: 'about', icon: FiUser, label: 'About' },
-    { id: 'skills', icon: FiCode, label: 'Skills' },
-    { id: 'projects', icon: FiFolder, label: 'Projects' },
+    { id: 'projects', icon: FiEye, label: 'Showcase' },
     { id: 'contact', icon: FiMail, label: 'Contact' }
   ];
 

@@ -10,23 +10,15 @@ const Header = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      const sections = ['about', 'skills', 'projects', 'contact'];
+      const sections = ['about', 'projects', 'contact'];
       const scrollPosition = currentScrollY + 100; 
-      
-      // Get all section elements
-      const sectionElements = sections.map(section => {
-        if (section === 'about') {
-          // For "About Me", we check if we're in the Hero section
-          return document.querySelector('main > div:first-child') || document.querySelector('[data-section="hero"]');
-        }
-        return document.querySelector(`[data-section="${section}"]`) || document.querySelector(`#${section}`);
-      }).filter(Boolean);
 
       // Find which section is currently in view
-      for (let i = sectionElements.length - 1; i >= 0; i--) {
-        const element = sectionElements[i];
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        const element = document.querySelector(`[data-section="${section}"]`) || document.querySelector(`#${section}`);
         if (element && (element as HTMLElement).offsetTop <= scrollPosition) {
-          setActiveSection(sections[i]);
+          setActiveSection(section);
           break;
         }
       }
@@ -44,19 +36,8 @@ const Header = () => {
         top: document.documentElement.scrollHeight,
         behavior: 'smooth'
       });
-    } else if (sectionId === 'skills') {
-      const element = document.getElementById('skills-carousel-1');
-      if (element) {
-        const elementRect = element.getBoundingClientRect();
-        const elementTop = elementRect.top + window.pageYOffset;
-        const elementCenter = elementTop - (window.innerHeight / 2) + (elementRect.height / 2);
-        window.scrollTo({
-          top: elementCenter,
-          behavior: 'smooth'
-        });
-      }
     } else if (sectionId === 'projects') {
-      const element = document.getElementById('projects-toothtrackr');
+      const element = document.getElementById('showcase-kibbler');
       if (element) {
         const elementRect = element.getBoundingClientRect();
         const elementTop = elementRect.top + window.pageYOffset;
@@ -81,7 +62,7 @@ const Header = () => {
   const handleResumeDownload = () => {
     const link = document.createElement('a');
     link.href = ResumeFile;
-    link.download = 'Saimeown_Resume.pdf';
+    link.download = 'SIMON-PAMINTUAN-CV-UI.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -99,15 +80,11 @@ const Header = () => {
         {/* nav links */}
         <div className="hidden md:flex flex-row items-center space-x-1 md:space-x-1 lg:space-x-2 xl:space-x-4 2xl:space-x-8 font-fredoka">
           <button onClick={() => scrollToSection('about')} className={`relative text-black font-medium text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl whitespace-nowrap transition-all duration-300 px-1 md:px-1 lg:px-2 xl:px-3 2xl:px-4 py-2 group ${activeSection === 'about' ? 'active' : ''}`}>
-            About Me
+            About
             <span className={`absolute inset-0 border-2 border-black rounded-lg transition-all duration-300 ${activeSection === 'about' ? 'opacity-100 scale-100' : 'border-transparent group-hover:border-black opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100'}`}></span>
           </button>
-          <button onClick={() => scrollToSection('skills')} className={`relative text-black font-medium text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl whitespace-nowrap transition-all duration-300 px-1 md:px-1 lg:px-2 xl:px-3 2xl:px-4 py-2 group ${activeSection === 'skills' ? 'active' : ''}`}>
-            Skills
-            <span className={`absolute inset-0 border-2 border-black rounded-lg transition-all duration-300 ${activeSection === 'skills' ? 'opacity-100 scale-100' : 'border-transparent group-hover:border-black opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100'}`}></span>
-          </button>
           <button onClick={() => scrollToSection('projects')} className={`relative text-black font-medium text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl whitespace-nowrap transition-all duration-300 px-1 md:px-1 lg:px-2 xl:px-3 2xl:px-4 py-2 group ${activeSection === 'projects' ? 'active' : ''}`}>
-            Projects
+            Showcase
             <span className={`absolute inset-0 border-2 border-black rounded-lg transition-all duration-300 ${activeSection === 'projects' ? 'opacity-100 scale-100' : 'border-transparent group-hover:border-black opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100'}`}></span>
           </button>
           <button onClick={() => scrollToSection('contact')} className={`relative text-black font-medium text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl whitespace-nowrap transition-all duration-300 px-1 md:px-1 lg:px-2 xl:px-3 2xl:px-4 py-2 group ${activeSection === 'contact' ? 'active' : ''}`}>
