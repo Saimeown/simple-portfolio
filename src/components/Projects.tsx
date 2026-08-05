@@ -1,9 +1,10 @@
-import { FiExternalLink, FiPlay, FiLock } from 'react-icons/fi';
+import { FiArrowUpRight, FiPlay } from 'react-icons/fi';
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll';
 import KibblerVideo from '../../pics/kibbler.mp4';
 import MatchwrkImage from '../../pics/Matchwrk.png';
 import SanrioWorldImage from '../../pics/SanrioWorld.png';
 import DevPortfolioImage from '../../pics/devportfolio.png';
+import TwoDPortfolioVideo from '../assets/2d-portfolio.mp4';
 import TometouVideo from '../../pics/tometou.mp4';
 import SkillsWave from '../assets/skills-bg.svg';
 
@@ -17,6 +18,7 @@ type ShowcaseProject = {
   asset: string;
   liveUrl?: string;
   labels: string[];
+  accent: string;
 };
 
 const showcaseProjects: ShowcaseProject[] = [
@@ -29,7 +31,8 @@ const showcaseProjects: ShowcaseProject[] = [
       'A product UI direction for an IoT pet-feeding experience with clear hierarchy, dashboard readability, and a trust-focused visual system.',
     medium: 'video',
     asset: KibblerVideo,
-    labels: ['IoT Dashboard', 'System UI', 'Product Concept']
+    labels: ['IoT dashboard', 'System UI', 'Product concept'],
+    accent: 'bg-[#c8ff4d]'
   },
   {
     id: 'showcase-matchwrk',
@@ -42,7 +45,8 @@ const showcaseProjects: ShowcaseProject[] = [
     asset: MatchwrkImage,
     liveUrl:
       'https://www.figma.com/proto/2rpGH5XmGbYfgGS0KDANc9/Matchwrk?node-id=330-762&p=f&t=EYCuCb0Qs4gpBUho-0&scaling=min-zoom&content-scaling=fixed&page-id=25%3A145',
-    labels: ['Landing Page', 'Marketing UI', 'Visual Storytelling']
+    labels: ['Landing page', 'Marketing UI', 'Visual storytelling'],
+    accent: 'bg-[#ff8ed4]'
   },
   {
     id: 'showcase-sanrioworld',
@@ -55,7 +59,8 @@ const showcaseProjects: ShowcaseProject[] = [
     asset: SanrioWorldImage,
     liveUrl:
       'https://www.figma.com/proto/mLerOGltkX0v4nUGMS2XvH/Claymorphism-Sanrio-Theme-UI-and-Assets?node-id=1-3&p=f&t=r0RMBPtKISyIPlYL-0&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1',
-    labels: ['Claymorphism', 'Theme UI', 'Character Product']
+    labels: ['Claymorphism', 'Theme UI', 'Character product'],
+    accent: 'bg-[#ffc5d9]'
   },
   {
     id: 'showcase-devportfolio',
@@ -67,18 +72,32 @@ const showcaseProjects: ShowcaseProject[] = [
     medium: 'image',
     asset: DevPortfolioImage,
     liveUrl: 'https://seamon.vercel.app',
-    labels: ['Editorial UI', 'Monochrome', 'Portfolio Concept']
+    labels: ['Editorial UI', 'Monochrome', 'Portfolio concept'],
+    accent: 'bg-[#f2f2f2]'
+  },
+  {
+    id: 'showcase-2d-portfolio',
+    rank: '05',
+    name: '2D Portfolio',
+    tagline: 'A playful, illustrated portfolio world',
+    description:
+      'A 2D-themed portfolio mockup that turns personal work into a character-led digital space, balancing expressive art direction with a clear browsing flow.',
+    medium: 'video',
+    asset: TwoDPortfolioVideo,
+    labels: ['2D art direction', 'Portfolio mockup', 'Motion preview'],
+    accent: 'bg-[#65e6ff]'
   },
   {
     id: 'showcase-tometou',
-    rank: '05',
+    rank: '06',
     name: 'tometou',
     tagline: 'Anonymous message interface concept',
     description:
       'A social micro-product concept centered on emotional safety, clear submission flow, and low-friction interaction patterns.',
     medium: 'video',
     asset: TometouVideo,
-    labels: ['Social UI', 'Interaction Flow', 'Concept Product']
+    labels: ['Social UI', 'Interaction flow', 'Concept product'],
+    accent: 'bg-[#ff715b]'
   }
 ];
 
@@ -86,31 +105,36 @@ const Projects = () => {
   const titleReveal = useRevealOnScroll({ delay: 100 });
 
   return (
-    <section className="relative w-full py-20 lg:py-28 overflow-hidden bg-black" data-section="projects">
+    <section className="projects-section relative w-full overflow-hidden bg-black py-20 lg:py-28" data-section="projects">
       <img
         src={SkillsWave}
-        alt="Wave transition"
-        className="pointer-events-none absolute top-0 left-0 w-full h-[180px] sm:h-[220px] lg:h-[260px] object-cover object-top z-0"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute left-0 top-0 z-0 h-[180px] w-full object-cover object-top sm:h-[220px] lg:h-[260px]"
       />
 
-      <div className="relative z-10 w-full mx-auto px-4 md:px-8 lg:px-20 xl:px-40 2xl:px-52">
+      <div className="relative z-10 mx-auto w-full max-w-[1600px] px-4 md:px-8 lg:px-20 xl:px-28">
         <div
           ref={titleReveal.ref}
-          className={`text-center mb-14 lg:mb-20 mt-20 sm:mt-24 lg:mt-28 reveal-fade-up ${titleReveal.isRevealed ? 'revealed' : ''}`}
+          className={`mb-12 mt-20 border-b border-white/20 pb-7 sm:mt-24 lg:mb-16 lg:mt-28 lg:pb-10 reveal-fade-up ${titleReveal.isRevealed ? 'revealed' : ''}`}
         >
-          <p className="text-cyan-200/90 tracking-[0.2em] text-xs sm:text-sm font-sora font-semibold uppercase">
-            Showcase
-          </p>
-          <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sora font-bold text-white">
-            UI Design Collection
-          </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-sm sm:text-base lg:text-lg text-white/70 leading-relaxed">
-            Ranked works focused on visual direction, usability clarity, and memorable interaction patterns.
-            Every piece here is treated as a product experience, not just a static mockup.
-          </p>
+          <div className="flex items-end justify-between gap-6">
+            <div>
+              <p className="mb-3 flex items-center gap-3 font-sora text-[11px] font-semibold uppercase tracking-[0.24em] text-white/55 sm:text-xs">
+                <span className="h-2 w-2 rounded-full bg-[#65e6ff]" />
+                Selected work · 2026
+              </p>
+              <h2 className="max-w-4xl font-sora text-4xl font-bold leading-[0.98] tracking-[-0.05em] text-white sm:text-5xl md:text-6xl lg:text-7xl">
+                Interfaces with a point of view.
+              </h2>
+            </div>
+            <p className="hidden max-w-xs pb-1 text-right font-sora text-sm leading-relaxed text-white/55 lg:block">
+              Six explorations across product thinking, visual systems, and interaction design.
+            </p>
+          </div>
         </div>
 
-        <div className="space-y-10 lg:space-y-14">
+        <div className="space-y-6 lg:space-y-8">
           {showcaseProjects.map((project, index) => {
             const isEven = index % 2 === 0;
 
@@ -118,82 +142,90 @@ const Projects = () => {
               <article
                 id={project.id}
                 key={project.id}
-                className={`group relative overflow-hidden rounded-3xl border border-white/20 bg-white/5 backdrop-blur-md p-5 sm:p-6 lg:p-8 transition-all duration-500 hover:border-cyan-300/40 ${
-                  isEven ? '' : 'lg:translate-y-3'
-                }`}
+                className="project-card group relative overflow-hidden border border-white/[0.14] bg-[#0a0a0a]"
               >
-                <div className="absolute -right-5 -top-10 text-[95px] sm:text-[120px] font-black text-white/10 leading-none select-none">
-                  {project.rank}
-                </div>
+                <div className={`absolute inset-x-0 top-0 z-20 h-[3px] origin-left scale-x-[0.18] transition-transform duration-700 ease-out group-hover:scale-x-100 ${project.accent}`} />
 
-                <div className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-6 lg:gap-10 items-stretch`}>
-                  <div className="w-full lg:w-[58%]">
-                    <div className="relative h-full min-h-[250px] sm:min-h-[340px] lg:min-h-[420px] overflow-hidden rounded-2xl border border-white/15 bg-black">
-                      {project.medium === 'video' ? (
-                        <video
-                          src={project.asset}
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                        />
-                      ) : (
-                        <img
-                          src={project.asset}
-                          alt={`${project.name} preview`}
-                          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                        />
-                      )}
-                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+                <div className={`grid min-h-[520px] lg:grid-cols-12 ${isEven ? '' : 'lg:[&_.project-copy]:order-first'}`}>
+                  <div className={`project-media relative min-h-[280px] overflow-hidden bg-[#111] sm:min-h-[380px] lg:col-span-7 lg:min-h-[560px] ${isEven ? '' : 'lg:order-last'}`}>
+                    {project.medium === 'video' ? (
+                      <video
+                        src={project.asset}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="metadata"
+                        aria-label={`${project.name} motion preview`}
+                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.025]"
+                      />
+                    ) : (
+                      <img
+                        src={project.asset}
+                        alt={`${project.name} interface preview`}
+                        loading="lazy"
+                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.025]"
+                      />
+                    )}
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/5" />
+                    <div className="absolute bottom-4 left-4 flex items-center gap-2 border border-white/20 bg-black/60 px-3 py-2 font-sora text-[10px] font-semibold uppercase tracking-[0.18em] text-white backdrop-blur-md sm:bottom-5 sm:left-5">
+                      {project.medium === 'video' && <FiPlay className="h-3 w-3 fill-current" />}
+                      {project.medium === 'video' ? 'Playing preview' : 'Interface still'}
                     </div>
                   </div>
 
-                  <div className="w-full lg:w-[42%] flex flex-col justify-between">
-                    <div>
-                      <p className="text-xs uppercase tracking-[0.2em] text-cyan-200/90 font-sora font-semibold">#{project.rank}</p>
-                      <h3 className="mt-2 text-2xl sm:text-3xl lg:text-4xl text-white font-sora font-extrabold">
+                  <div className="project-copy relative flex flex-col justify-between p-6 sm:p-8 lg:col-span-5 lg:p-10 xl:p-12">
+                    <span className="project-rank pointer-events-none absolute right-5 top-3 select-none font-sora text-[5.5rem] font-extrabold leading-none sm:right-7 sm:text-[7rem] lg:right-8 lg:top-5 lg:text-[8.5rem]">
+                      {project.rank}
+                    </span>
+
+                    <div className="relative z-10">
+                      <p className="font-sora text-[10px] font-semibold uppercase tracking-[0.22em] text-white/45">
+                        Project {project.rank} / {project.medium === 'video' ? 'Motion' : 'UI design'}
+                      </p>
+                      <h3 className="mt-16 break-words font-sora text-3xl font-bold tracking-[-0.04em] text-white sm:text-4xl lg:mt-24 lg:text-5xl xl:text-6xl">
                         {project.name}
                       </h3>
-                      <p className="mt-2 text-lg text-rose-100/95 font-sora font-medium">{project.tagline}</p>
-                      <p className="mt-4 text-sm sm:text-base text-white/75 leading-relaxed">{project.description}</p>
-
-                      <div className="mt-5 flex flex-wrap gap-2">
-                        {project.labels.map((label) => (
-                          <span
-                            key={`${project.id}-${label}`}
-                            className="rounded-full border border-white/25 px-3 py-1 text-xs sm:text-sm text-white/80 font-sora"
-                          >
-                            {label}
-                          </span>
-                        ))}
-                      </div>
+                      <p className="mt-3 max-w-md font-sora text-base font-medium leading-snug text-white/90 sm:text-lg">
+                        {project.tagline}
+                      </p>
+                      <p className="mt-5 max-w-md text-sm leading-7 text-white/55 sm:text-[15px]">
+                        {project.description}
+                      </p>
                     </div>
 
-                    <div className="mt-7 flex flex-wrap items-center gap-3">
-                      {project.liveUrl ? (
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 rounded-xl bg-white text-black px-4 py-2.5 font-sora font-semibold text-sm transition-all duration-300 hover:bg-cyan-200"
-                        >
-                          <FiExternalLink className="h-4 w-4" />
-                          Live Preview
-                        </a>
-                      ) : (
-                        <span className="inline-flex items-center gap-2 rounded-xl border border-white/30 text-white/80 px-4 py-2.5 font-sora font-semibold text-sm">
-                          <FiLock className="h-4 w-4" />
-                          Not Live Yet
-                        </span>
-                      )}
+                    <div className="relative z-10 mt-10">
+                      <ul className="flex flex-wrap gap-x-4 gap-y-2 border-t border-white/15 pt-5" aria-label={`${project.name} disciplines`}>
+                        {project.labels.map((label) => (
+                          <li key={`${project.id}-${label}`} className="flex items-center gap-2 font-sora text-[10px] font-medium uppercase tracking-[0.12em] text-white/50 sm:text-[11px]">
+                            <span className={`h-1.5 w-1.5 rounded-full ${project.accent}`} />
+                            {label}
+                          </li>
+                        ))}
+                      </ul>
 
-                      {project.medium === 'video' && (
-                        <span className="inline-flex items-center gap-2 rounded-xl border border-white/20 text-white/80 px-4 py-2.5 font-sora font-semibold text-sm">
-                          <FiPlay className="h-4 w-4" />
-                          Motion Preview
-                        </span>
-                      )}
+                      <div className="mt-7">
+                        {project.liveUrl ? (
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="project-link inline-flex items-center gap-3 font-sora text-sm font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                            aria-label={`Open ${project.name} live preview in a new tab`}
+                          >
+                            View live project
+                            <FiArrowUpRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                          </a>
+                        ) : (
+                          <p className="flex items-center gap-3 font-sora text-xs font-semibold uppercase tracking-[0.16em] text-white/65">
+                            <span className="relative flex h-2 w-2">
+                              <span className={`absolute inline-flex h-full w-full animate-ping rounded-full opacity-40 ${project.accent}`} />
+                              <span className={`relative inline-flex h-2 w-2 rounded-full ${project.accent}`} />
+                            </span>
+                            Concept study
+                          </p>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
