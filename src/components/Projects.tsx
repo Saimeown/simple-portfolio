@@ -118,20 +118,9 @@ const Projects = () => {
           ref={titleReveal.ref}
           className={`mb-12 mt-20 border-b border-white/20 pb-7 sm:mt-24 lg:mb-16 lg:mt-28 lg:pb-10 reveal-fade-up ${titleReveal.isRevealed ? 'revealed' : ''}`}
         >
-          <div className="flex items-end justify-between gap-6">
-            <div>
-              <p className="mb-3 flex items-center gap-3 font-sora text-[11px] font-semibold uppercase tracking-[0.24em] text-white/55 sm:text-xs">
-                <span className="h-2 w-2 rounded-full bg-[#65e6ff]" />
-                Selected work · 2026
-              </p>
-              <h2 className="max-w-4xl font-sora text-4xl font-bold leading-[0.98] tracking-[-0.05em] text-white sm:text-5xl md:text-6xl lg:text-7xl">
-                Interfaces with a point of view.
-              </h2>
-            </div>
-            <p className="hidden max-w-xs pb-1 text-right font-sora text-sm leading-relaxed text-white/55 lg:block">
-              Six explorations across product thinking, visual systems, and interaction design.
-            </p>
-          </div>
+          <h2 className="font-sora text-4xl font-bold leading-[0.98] tracking-[-0.05em] text-white sm:text-5xl md:text-6xl lg:text-7xl">
+            UI Design Collection
+          </h2>
         </div>
 
         <div className="space-y-6 lg:space-y-8">
