@@ -33,7 +33,7 @@ const projects: ShowcaseProject[] = [
     medium: 'video',
     asset: KibblerVideo,
     labels: ['IoT dashboard', 'Product UI', 'System design'],
-    accent: '#c7ef55'
+    accent: '#e66a1f'
   },
   {
     id: 'showcase-wavr',
@@ -56,7 +56,7 @@ const projects: ShowcaseProject[] = [
     description: 'A conversion-focused marketplace landing page with playful illustration and crisp message hierarchy.',
     medium: 'image',
     asset: MatchwrkImage,
-    links: [{ label: 'Prototype', url: 'https://www.figma.com/proto/2rpGH5XmGbYfgGS0KDANc9/Matchwrk?node-id=330-762&p=f&t=EYCuCb0Qs4gpBUho-0&scaling=min-zoom&content-scaling=fixed&page-id=25%3A145' }],
+    links: [{ label: 'Prototype', url: 'https://www.figma.com/proto/2rpGH5XmGbYfgGS0KDANc9/Matchwrk?node-id=330-762&p=f&t=EYCuCb0Qs4gpBUho-0&scaling=scale-down-width&content-scaling=fixed&page-id=25%3A145' }],
     labels: ['Landing page', 'Marketing UI', 'Visual design'],
     accent: '#fca4d9'
   },
@@ -178,9 +178,12 @@ const Projects = () => (
               </div>
               <h3>{project.statement}</h3>
               <p className="work-card__description">{project.description}</p>
-              <ul aria-label={`${project.name} disciplines`}>
-                {project.labels.map((label) => <li key={label}>{label}</li>)}
-              </ul>
+              <div className="work-card__disciplines">
+                <p>Design focus</p>
+                <ul aria-label={`${project.name} disciplines`}>
+                  {project.labels.map((label) => <li key={label}>{label}</li>)}
+                </ul>
+              </div>
             </div>
 
             <div className="work-card__footer">

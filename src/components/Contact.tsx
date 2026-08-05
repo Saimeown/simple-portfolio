@@ -53,7 +53,7 @@ const Contact = () => {
         <div className="contact-panel__links">
           <a href="mailto:simonbriangarcia@gmail.com" aria-label="Email Simon"><FiMail /></a>
           <a href="https://www.facebook.com/saimeown/" target="_blank" rel="noreferrer" aria-label="Facebook"><FiFacebook /></a>
-          <a href="https://www.instagram.com/saimese._/" target="_blank" rel="noreferrer" aria-label="Instagram"><FiInstagram /></a>
+          <a href="https://www.instagram.com/saymese/" target="_blank" rel="noreferrer" aria-label="Instagram"><FiInstagram /></a>
         </div>
         <a className="contact-panel__email" href="mailto:simonbriangarcia@gmail.com">simonbriangarcia@gmail.com</a>
       </div>

@@ -734,22 +734,6 @@ body {
   height: 46%;
 }
 
-.portfolio-hero__scroll {
-  position: absolute;
-  right: 6vw;
-  bottom: 26px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--portfolio-ink);
-  font-size: 12px;
-  font-weight: 700;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  z-index: 4;
-}
-
 .portfolio-intro {
   position: relative;
   z-index: 3;
@@ -928,9 +912,17 @@ body {
   color: rgba(246, 247, 244, 0.66);
 }
 
+.work-card:nth-child(even) .work-card__disciplines {
+  border-color: rgba(246, 247, 244, 0.22);
+}
+
+.work-card:nth-child(even) .work-card__disciplines > p {
+  color: rgba(246, 247, 244, 0.48);
+}
+
 .work-card:nth-child(even) li {
+  border-color: rgba(246, 247, 244, 0.2);
   color: var(--portfolio-paper);
-  background: color-mix(in srgb, var(--project-accent) 28%, var(--portfolio-ink));
 }
 
 .work-card:nth-child(even) .work-card__footer a,
@@ -1036,23 +1028,70 @@ body {
   line-height: 1.7;
 }
 
-.work-card ul {
+.work-card__disciplines {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr);
+  gap: 16px;
+  align-items: stretch;
+  margin-top: 34px;
+}
+
+.work-card__disciplines > p {
+  align-self: stretch;
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin: 24px 0 0;
+  align-items: flex-end;
+  margin: 0;
+  color: rgba(17, 21, 17, 0.46);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.work-card ul {
+  counter-reset: focus-item;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .work-card li {
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--project-accent) 28%, white);
-  font-size: 9px;
-  font-weight: 700;
+  counter-increment: focus-item;
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  align-items: baseline;
+  width: 100%;
+  padding: 9px 0 8px;
+  border-bottom: 1px solid rgba(17, 21, 17, 0.18);
+  color: var(--portfolio-ink);
+  font-family: "Archivo", sans-serif;
+  font-size: clamp(13px, 1.2vw, 17px);
+  font-weight: 750;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: -0.01em;
+}
+
+.work-card li::before {
+  content: "0" counter(focus-item);
+  color: var(--project-accent);
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+}
+
+.work-card li:nth-child(2) {
+  width: calc(100% - 18px);
+  margin-left: 18px;
+}
+
+.work-card li:nth-child(3) {
+  width: calc(100% - 36px);
+  margin-left: 36px;
 }
 
 .work-card__footer {
@@ -1529,6 +1568,21 @@ body {
 
   .work-card h3 {
     font-size: clamp(28px, 9vw, 42px);
+  }
+
+  .work-card__disciplines {
+    grid-template-columns: 24px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .work-card li:nth-child(2) {
+    width: calc(100% - 12px);
+    margin-left: 12px;
+  }
+
+  .work-card li:nth-child(3) {
+    width: calc(100% - 24px);
+    margin-left: 24px;
   }
 
   .portfolio-footer {

@@ -1,4 +1,4 @@
-import { FiArrowDownRight, FiFacebook, FiInstagram, FiMail } from 'react-icons/fi';
+import { FiFacebook, FiInstagram, FiMail } from 'react-icons/fi';
 import EyePair from './EyePair';
 import KibblerVideo from '../../pics/kibbler.mp4';
 import MatchwrkImage from '../../pics/Matchwrk.png';
@@ -64,9 +64,6 @@ const Hero = () => (
 
       <EyePair className="portfolio-hero__eyes" />
 
-      <a className="portfolio-hero__scroll" href="#projects">
-        Selected work <FiArrowDownRight />
-      </a>
     </header>
 
     <section className="portfolio-intro" aria-labelledby="intro-title">
@@ -74,7 +71,7 @@ const Hero = () => (
         <h2 id="intro-title">Hello, I’m Simon.</h2>
         <div className="portfolio-intro__actions" aria-label="Social links">
           <a href="https://www.facebook.com/saimeown/" target="_blank" rel="noreferrer" aria-label="Facebook"><FiFacebook /></a>
-          <a href="https://www.instagram.com/saimese._/" target="_blank" rel="noreferrer" aria-label="Instagram"><FiInstagram /></a>
+          <a href="https://www.instagram.com/saymese/" target="_blank" rel="noreferrer" aria-label="Instagram"><FiInstagram /></a>
           <a href="mailto:simonbriangarcia@gmail.com" aria-label="Email"><FiMail /></a>
         </div>
       </div>
