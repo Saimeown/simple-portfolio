@@ -1,5 +1,5 @@
-import type { CSSProperties } from 'react';
-import { FiArrowUpRight, FiPlay } from 'react-icons/fi';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
+import { FiArrowUpRight } from 'react-icons/fi';
 import KibblerVideo from '../../pics/kibbler.mp4';
 import MatchwrkImage from '../../pics/Matchwrk.png';
 import SanrioWorldImage from '../../pics/SanrioWorld.png';
@@ -119,22 +119,65 @@ const projects: ShowcaseProject[] = [
     description: 'A motion-led web study exploring pacing, visual transitions, and a more expressive browsing experience.',
     medium: 'video',
     asset: NagareVideo,
+    links: [{ label: 'Live site', url: 'https://ink-flock.pages.dev/' }],
     labels: ['Web design', 'Motion design', 'Interaction'],
     accent: '#a78bfa'
   }
 ];
 
+const MotionPreview = ({ project }: { project: ShowcaseProject }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [shouldLoad, setShouldLoad] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry) return;
+
+      setIsVisible(entry.isIntersecting);
+      if (entry.isIntersecting) setShouldLoad(true);
+    }, { rootMargin: '250px 0px', threshold: 0.05 });
+
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !shouldLoad) return;
+
+    if (isVisible) {
+      void video.play().catch(() => {
+        // Autoplay can be disabled by the visitor's browser settings.
+      });
+    } else {
+      video.pause();
+    }
+  }, [isVisible, shouldLoad]);
+
+  return (
+    <video
+      ref={videoRef}
+      src={shouldLoad ? project.asset : undefined}
+      loop
+      muted
+      playsInline
+      preload="none"
+      aria-label={`${project.name} motion preview`}
+    />
+  );
+};
+
 const ProjectMedia = ({ project }: { project: ShowcaseProject }) => (
   <div className="work-card__media" style={{ backgroundColor: project.accent }}>
     {project.medium === 'video' ? (
-      <video src={project.asset} autoPlay loop muted playsInline preload="metadata" aria-label={`${project.name} motion preview`} />
+      <MotionPreview project={project} />
     ) : (
       <img src={project.asset} alt={`${project.name} interface preview`} loading="lazy" />
     )}
-    <span className="work-card__kind">
-      {project.medium === 'video' && <FiPlay />}
-      {project.medium === 'video' ? 'Motion preview' : 'Interface design'}
-    </span>
   </div>
 );
 
