@@ -9,6 +9,7 @@ import TwoDPortfolioVideo from '../assets/2d-portfolio.mp4';
 import WavrImage from '../assets/wavr - desktop.png';
 import RestaurantImage from '../assets/restaurant.png';
 import NagareVideo from '../assets/nagare.mp4';
+import AutumnVacationImage from '../assets/FallVacation-optimized.jpg';
 
 type CarouselItem = {
   name: string;
@@ -17,6 +18,7 @@ type CarouselItem = {
 };
 
 const leftCarousel: CarouselItem[] = [
+  { name: 'Autumn Vacation', asset: AutumnVacationImage, medium: 'image' },
   { name: 'WAV.R', asset: WavrImage, medium: 'image' },
   { name: 'Kibbler', asset: KibblerVideo, medium: 'video' },
   { name: 'CABS Korean', asset: RestaurantImage, medium: 'image' },

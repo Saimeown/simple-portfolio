@@ -9,6 +9,7 @@ import TwoDPortfolioVideo from '../assets/2d-portfolio.mp4';
 import WavrImage from '../assets/wavr - desktop.png';
 import RestaurantImage from '../assets/restaurant.png';
 import NagareVideo from '../assets/nagare.mp4';
+import AutumnVacationImage from '../assets/FallVacation-optimized.jpg';
 
 type ProjectLink = { label: string; url: string };
 
@@ -25,6 +26,17 @@ type ShowcaseProject = {
 };
 
 const projects: ShowcaseProject[] = [
+  {
+    id: 'showcase-autumn-vacation',
+    name: 'Autumn Vacation',
+    statement: 'Seasonal escapes made simple to discover and book.',
+    description: 'A warm, autumn-inspired travel booking interface that guides travelers from destination discovery to trip details and booking.',
+    medium: 'image',
+    asset: AutumnVacationImage,
+    links: [{ label: 'Prototype', url: 'https://www.figma.com/proto/O4SbBzYDPdqTw8QjTTcVam/Travel-APP--Community-?node-id=6104-82&p=f&t=jaT4vzj3GIRJgpE8-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1' }],
+    labels: ['Travel booking', 'Mobile UI', 'Product design'],
+    accent: '#ed6d22'
+  },
   {
     id: 'showcase-kibbler',
     name: 'Kibbler',
@@ -125,6 +137,10 @@ const projects: ShowcaseProject[] = [
   }
 ];
 
+const orderedProjects = [...projects].sort((projectA, projectB) =>
+  Number(Boolean(projectB.links?.length)) - Number(Boolean(projectA.links?.length))
+);
+
 const MotionPreview = ({ project }: { project: ShowcaseProject }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [shouldLoad, setShouldLoad] = useState(false);
@@ -205,7 +221,7 @@ const Projects = () => (
     </div>
 
     <div className="work-grid">
-      {projects.map((project, index) => (
+      {orderedProjects.map((project, index) => (
         <article
           className="work-card"
           id={project.id}
