@@ -10,11 +10,13 @@ import WavrImage from '../assets/wavr - desktop.png';
 import RestaurantImage from '../assets/restaurant.png';
 import NagareVideo from '../assets/nagare.mp4';
 import AutumnVacationImage from '../assets/FallVacation-optimized.jpg';
+import ChattelImage from '../assets/chattel-optimized.jpg';
 
 type ProjectLink = { label: string; url: string };
 
 type ShowcaseProject = {
   id: string;
+  order: number;
   name: string;
   statement: string;
   description: string;
@@ -28,6 +30,7 @@ type ShowcaseProject = {
 const projects: ShowcaseProject[] = [
   {
     id: 'showcase-autumn-vacation',
+    order: 1,
     name: 'Autumn Vacation',
     statement: 'Seasonal escapes made simple to discover and book.',
     description: 'A warm, autumn-inspired travel booking interface that guides travelers from destination discovery to trip details and booking.',
@@ -39,6 +42,7 @@ const projects: ShowcaseProject[] = [
   },
   {
     id: 'showcase-kibbler',
+    order: 8,
     name: 'Kibbler',
     statement: 'A calmer way to care for pets from anywhere.',
     description: 'A smart feeder interface concept built around clarity, dependable controls, and an approachable visual system.',
@@ -49,6 +53,7 @@ const projects: ShowcaseProject[] = [
   },
   {
     id: 'showcase-wavr',
+    order: 2,
     name: 'WAV.R',
     statement: 'Audio gear presented with the energy of the music.',
     description: 'A responsive storefront for headphones, earbuds, and music accessories with bold product storytelling.',
@@ -62,7 +67,20 @@ const projects: ShowcaseProject[] = [
     accent: '#ff9d22'
   },
   {
+    id: 'showcase-chattel',
+    order: 3,
+    name: 'Chattel',
+    statement: 'Modern furniture for considered, comfortable spaces.',
+    description: 'A furniture e-commerce website that pairs an atmospheric visual direction with clear shopping paths and approachable product discovery.',
+    medium: 'image',
+    asset: ChattelImage,
+    links: [{ label: 'Prototype', url: 'https://www.figma.com/proto/QzYeSYkZStVtoOTWmhcl95/Panto---Furniture-Landing-Page-Design--Community-?node-id=1-2&p=f&t=Y9QrODfChVwESmTw-0&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1' }],
+    labels: ['Furniture e-commerce', 'Web design', 'Product UI'],
+    accent: '#55bdb8'
+  },
+  {
     id: 'showcase-matchwrk',
+    order: 4,
     name: 'Matchwrk',
     statement: 'A friendlier first step into finding the right talent.',
     description: 'A conversion-focused marketplace landing page with playful illustration and crisp message hierarchy.',
@@ -74,6 +92,7 @@ const projects: ShowcaseProject[] = [
   },
   {
     id: 'showcase-sanrioworld',
+    order: 5,
     name: 'SanrioWorld',
     statement: 'A character portal with toy-like depth and charm.',
     description: 'A colorful claymorphism interface that keeps playful composition and everyday usability in balance.',
@@ -85,6 +104,7 @@ const projects: ShowcaseProject[] = [
   },
   {
     id: 'showcase-devportfolio',
+    order: 6,
     name: 'devportfolio',
     statement: 'A monochrome portfolio built to make a strong entrance.',
     description: 'A typography-heavy design exploration focused on confidence, pace, and immersive first impressions.',
@@ -96,6 +116,7 @@ const projects: ShowcaseProject[] = [
   },
   {
     id: 'showcase-2d-portfolio',
+    order: 9,
     name: '2D Portfolio',
     statement: 'Personal work turned into an illustrated digital world.',
     description: 'A 2D-themed portfolio mockup with character-led art direction, motion, and a clear browsing flow.',
@@ -106,6 +127,7 @@ const projects: ShowcaseProject[] = [
   },
   {
     id: 'showcase-tometou',
+    order: 10,
     name: 'tometou',
     statement: 'Anonymous messages designed around emotional safety.',
     description: 'A low-friction social concept with a focused submission flow and deliberately gentle interaction patterns.',
@@ -116,6 +138,7 @@ const projects: ShowcaseProject[] = [
   },
   {
     id: 'showcase-cabs-korean',
+    order: 11,
     name: 'CABS Korean',
     statement: 'A restaurant landing page with appetite and attitude.',
     description: 'A bold web concept for an unlimited samgyupsal experience, pairing direct navigation with energetic brand color.',
@@ -126,6 +149,7 @@ const projects: ShowcaseProject[] = [
   },
   {
     id: 'showcase-nagare',
+    order: 7,
     name: 'Nagare',
     statement: 'Web design shaped through rhythm and movement.',
     description: 'A motion-led web study exploring pacing, visual transitions, and a more expressive browsing experience.',
@@ -137,9 +161,7 @@ const projects: ShowcaseProject[] = [
   }
 ];
 
-const orderedProjects = [...projects].sort((projectA, projectB) =>
-  Number(Boolean(projectB.links?.length)) - Number(Boolean(projectA.links?.length))
-);
+const orderedProjects = [...projects].sort((projectA, projectB) => projectA.order - projectB.order);
 
 const MotionPreview = ({ project }: { project: ShowcaseProject }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
