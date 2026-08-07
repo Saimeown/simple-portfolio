@@ -950,12 +950,6 @@ body {
   height: 100%;
   display: block;
   object-fit: cover;
-  transition: transform 600ms cubic-bezier(.2,.7,.2,1);
-}
-
-.work-card:hover .work-card__media img,
-.work-card:hover .work-card__media video {
-  transform: scale(1.025);
 }
 
 .work-card__body {
