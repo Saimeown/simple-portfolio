@@ -48,6 +48,7 @@ const projects: ShowcaseProject[] = [
     description: 'A smart feeder interface concept built around clarity, dependable controls, and an approachable visual system.',
     medium: 'video',
     asset: KibblerVideo,
+    links: [{ label: 'Live site', url: 'https://kibbler.pages.dev/' }],
     labels: ['IoT dashboard', 'Product UI', 'System design'],
     accent: '#e66a1f'
   },
