@@ -75,7 +75,7 @@ const projects: ShowcaseProject[] = [
     description: 'A furniture e-commerce website that pairs an atmospheric visual direction with clear shopping paths and approachable product discovery.',
     medium: 'image',
     asset: ChattelImage,
-    links: [{ label: 'Prototype', url: 'https://www.figma.com/proto/QzYeSYkZStVtoOTWmhcl95/Panto---Furniture-Landing-Page-Design--Community-?node-id=1-2&p=f&t=Y9QrODfChVwESmTw-0&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1' }],
+    links: [{ label: 'Prototype', url: 'https://www.figma.com/proto/QzYeSYkZStVtoOTWmhcl95/Chattel?node-id=1-2&p=f&t=QUVNi7oLeTCx1RHP-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1' }],
     labels: ['Furniture e-commerce', 'Web design', 'Product UI'],
     accent: '#55bdb8'
   },
