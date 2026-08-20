@@ -36,7 +36,7 @@ const projects: ShowcaseProject[] = [
     description: 'A warm, autumn-inspired travel booking interface that guides travelers from destination discovery to trip details and booking.',
     medium: 'image',
     asset: AutumnVacationImage,
-    links: [{ label: 'Prototype', url: 'https://www.figma.com/proto/fVhWInVJgX5O53b9t5CVDb/Autumn-Themed-Vacation-or-Travel-Booking-App--Community-?node-id=8102-12&p=f&t=kQcDzqXTgvVlBQ4D-0&scaling=scale-down-width&content-scaling=fixed&page-id=8102%3A11' }],
+    links: [{ label: 'Prototype', url: 'https://www.figma.com/proto/fVhWInVJgX5O53b9t5CVDb/Autumn-Themed-Vacation-Concept-UI?node-id=8102-12&p=f&t=kQcDzqXTgvVlBQ4D-0&scaling=scale-down-width&content-scaling=fixed&page-id=8102%3A11' }],
     labels: ['Travel booking', 'Mobile UI', 'Product design'],
     accent: '#ed6d22'
   },
