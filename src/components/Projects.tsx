@@ -11,6 +11,7 @@ import RestaurantImage from '../assets/restaurant.png';
 import NagareVideo from '../assets/nagare.mp4';
 import AutumnVacationImage from '../assets/FallVacation-optimized.jpg';
 import ChattelImage from '../assets/chattel-optimized.jpg';
+import EerieDescentImage from '../assets/eerie-descent.png';
 
 type ProjectLink = { label: string; url: string };
 
@@ -28,6 +29,18 @@ type ShowcaseProject = {
 };
 
 const projects: ShowcaseProject[] = [
+  {
+    id: 'showcase-eerie-descent',
+    order: 0,
+    name: 'Eerie Descent',
+    statement: 'A dark-fantasy RPG launcher made for ritualistic immersion.',
+    description: 'A cinematic game client UI concept inspired by modern Riot-style launcher layouts, combining dark fantasy storytelling with customizable seasonal themes and clear navigation.',
+    medium: 'image',
+    asset: EerieDescentImage,
+    links: [{ label: 'Prototype', url: 'https://www.figma.com/proto/J74xTozHXXXOhX01kXveCq/Eerie-Descent---RPG-Game-Client-UI?node-id=24-515&p=f&t=LmO702mbUq7kAWKD-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2' }],
+    labels: ['Game client UI', 'Launcher UI', 'Dark fantasy'],
+    accent: '#5f5fec'
+  },
   {
     id: 'showcase-autumn-vacation',
     order: 1,

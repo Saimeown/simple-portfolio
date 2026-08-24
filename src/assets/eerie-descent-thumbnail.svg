@@ -1,0 +1,77 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="200" y1="40" x2="1400" y2="1160" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0E0F1D"/>
+      <stop offset="0.38" stop-color="#1C1732"/>
+      <stop offset="1" stop-color="#06070D"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(820 470) rotate(90) scale(620 760)">
+      <stop offset="0" stop-color="#B8A2FF" stop-opacity="0.92"/>
+      <stop offset="0.28" stop-color="#A78BFA" stop-opacity="0.42"/>
+      <stop offset="0.62" stop-color="#5574FF" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#0A0D17" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="textGrad" x1="500" y1="240" x2="1110" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5F6FB"/>
+      <stop offset="0.52" stop-color="#E5E9FF"/>
+      <stop offset="1" stop-color="#D1C7FF"/>
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1200" fill="url(#bg)"/>
+  <rect width="1600" height="1200" fill="url(#glow)"/>
+
+  <g opacity="0.9">
+    <path d="M510 930C405 900 330 820 330 735C330 640 420 575 525 575C620 575 690 625 750 690L767 658C708 582 632 522 526 522C390 522 287 612 287 738C287 860 373 945 510 984L510 930Z" fill="#6E5CCB" fill-opacity="0.25"/>
+    <path d="M1090 930C1195 900 1270 820 1270 735C1270 640 1180 575 1075 575C980 575 910 625 850 690L833 658C892 582 968 522 1074 522C1210 522 1313 612 1313 738C1313 860 1227 945 1090 984L1090 930Z" fill="#6E5CCB" fill-opacity="0.25"/>
+  </g>
+
+  <g opacity="0.38">
+    <path d="M290 514C430 420 592 372 802 372C1028 372 1194 434 1300 525V560C1174 467 1005 424 802 424C596 424 435 478 290 560V514Z" fill="#C5D6FF"/>
+    <path d="M320 612L520 492" stroke="#EBEFFF" stroke-opacity="0.5" stroke-width="4"/>
+    <path d="M1280 612L1080 492" stroke="#EBEFFF" stroke-opacity="0.5" stroke-width="4"/>
+  </g>
+
+  <g filter="url(#softGlow)">
+    <path d="M520 420C560 310 646 262 730 276C804 288 870 332 926 400C977 464 1034 516 1118 522C1213 528 1298 474 1342 388L1404 420C1336 554 1248 628 1098 643C1012 650 956 622 897 573C830 519 792 515 721 540C658 561 604 593 545 640L502 602C548 543 559 484 520 420Z" fill="#EEF0FF" fill-opacity="0.2"/>
+  </g>
+
+  <g opacity="0.75">
+    <path d="M360 1000C515 898 648 860 795 860C935 860 1048 894 1190 996L1262 1088H292L360 1000Z" fill="#0C0F1A" fill-opacity="0.84"/>
+    <path d="M348 892C462 798 610 754 797 754C982 754 1112 793 1228 892" stroke="#D8DDFF" stroke-opacity="0.42" stroke-width="3"/>
+  </g>
+
+  <g>
+    <path d="M622 342C675 295 729 267 789 248C875 220 974 220 1049 274C1102 312 1138 375 1144 440C1148 476 1140 515 1117 549C1111 557 1106 562 1099 567C1088 574 1063 578 1039 580L987 586C962 546 938 515 893 492C840 466 778 467 723 492C672 516 626 553 580 610L543 594C589 524 604 462 622 342Z" fill="#FFFBFF" fill-opacity="0.12"/>
+    <path d="M610 313C771 256 905 283 995 394C1019 423 1032 457 1035 494C1017 500 998 505 979 512L912 538C859 506 814 486 744 483C673 480 630 489 580 517C559 529 534 541 505 565L463 523C513 448 547 400 610 313Z" fill="#11101E" fill-opacity="0.9"/>
+  </g>
+
+  <g opacity="0.92">
+    <path d="M598 402C654 349 725 318 809 318C881 318 928 342 980 386C1030 429 1071 482 1086 529C1067 535 1046 542 1024 550C980 568 936 581 887 592L821 607C770 594 722 562 673 527C641 502 609 483 577 471L598 402Z" fill="#B8CCFF" fill-opacity="0.12"/>
+    <path d="M730 518C772 505 822 505 866 520C908 535 951 564 986 604C987 638 978 672 947 700C916 728 876 742 829 739C767 735 706 704 657 667C626 643 595 610 560 569C590 540 648 519 730 518Z" fill="#191D2D" fill-opacity="0.9"/>
+  </g>
+
+  <g>
+    <path d="M714 332L700 396L760 408L786 345L714 332Z" fill="#D9D5FF" fill-opacity="0.66"/>
+    <path d="M872 342L891 394L943 374L934 323L872 342Z" fill="#D9D5FF" fill-opacity="0.54"/>
+    <path d="M741 263C763 249 788 242 818 242C849 242 876 249 900 267L884 297C862 285 838 280 815 280C793 280 770 286 748 300L741 263Z" fill="#F5F7FF" fill-opacity="0.88"/>
+  </g>
+
+  <g opacity="0.78">
+    <path d="M640 724C702 692 753 679 803 679C854 679 904 694 959 726L936 751C879 714 835 705 802 705C767 705 724 718 678 750L640 724Z" fill="#F8F9FF" fill-opacity="0.12"/>
+    <path d="M794 730L856 864" stroke="#DDE1FF" stroke-opacity="0.44" stroke-width="6" stroke-linecap="round"/>
+    <path d="M735 792L794 730L857 864" stroke="#DDE1FF" stroke-opacity="0.3" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <g>
+    <text x="800" y="508" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="168" letter-spacing="4" fill="url(#textGrad)" opacity="0.96">EERIE</text>
+    <text x="800" y="594" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="68" letter-spacing="20" fill="#E9E9FF" opacity="0.82">DESCENT</text>
+  </g>
+</svg>
